@@ -95,8 +95,7 @@ public class VideoController {
 		    });
 			
 			if(video != null){
-				videoDataMgr = VideoFileManager.get();
-				videoDataMgr.copyVideoData(video, response.getOutputStream());
+				serveSomeVideo(video, response);
 			} else {
 				response.setStatus(404);
 			}
